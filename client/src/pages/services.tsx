@@ -77,6 +77,16 @@ export default function ServicesPage() {
       <main className="min-h-screen pt-32 pb-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <img src="/logo.png" alt="Well Beaute logo" className="w-16 h-16 object-contain" />
+            </div>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-secondary font-medium tracking-widest uppercase mb-2 block"
+            >
+              What We Offer
+            </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

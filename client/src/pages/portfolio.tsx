@@ -29,7 +29,7 @@ export default function PortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>Portfolio | Well Beaute Home Spa</title>
+        <title>Gallery | Well Beaute Home Spa</title>
         <meta
           name="description"
           content="View our gallery of stunning spa and massage experiences."
@@ -42,6 +42,16 @@ export default function PortfolioPage() {
       <main className="min-h-screen pt-32 pb-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <img src="/logo.png" alt="Well Beaute logo" className="w-16 h-16 object-contain" />
+            </div>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-secondary font-medium tracking-widest uppercase mb-2 block"
+            >
+              Our Work
+            </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -109,12 +119,8 @@ export default function PortfolioPage() {
                   transition={{ delay: 0.2 }}
                   className="text-center mt-6"
                 >
-                  <h3 className="text-3xl text-white font-serif mb-2">
-                    {selectedImage.title}
-                  </h3>
-                  <p className="text-[#1B8B7E] uppercase tracking-widest text-sm">
-                    {selectedImage.category}
-                  </p>
+                  <h3 className="text-3xl text-white font-serif mb-2">{selectedImage.title}</h3>
+                  <p className="text-secondary uppercase tracking-widest text-sm">{selectedImage.category}</p>
                 </motion.div>
               </div>
             </motion.div>

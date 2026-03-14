@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Instagram, Facebook, Twitter, MapPin, Phone, Mail, Flower2 } from "lucide-react";
+import { Instagram, Facebook, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,14 +9,23 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <Flower2 className="w-8 h-8 text-secondary" />
-              <span className="font-serif text-2xl font-bold tracking-tight">
-                Welldone<span className="text-secondary">beauty</span>
-              </span>
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Well Beaute Home Spa logo"
+                className="w-12 h-12 object-contain brightness-0 invert"
+              />
+              <div className="leading-tight">
+                <span className="font-serif text-xl font-bold tracking-tight block">
+                  Well Beaute
+                </span>
+                <span className="text-xs font-medium text-primary-foreground/70 uppercase tracking-widest">
+                  Home Spa
+                </span>
+              </div>
             </Link>
             <p className="text-primary-foreground/70 leading-relaxed max-w-none">
-              Elevating your natural beauty with premium spa services. Experience luxury, professionalism, and wellness in every visit.
+              Elevating your wellness with premium at-home spa services. Experience luxury, professionalism, and true relaxation delivered to your door.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
@@ -89,7 +98,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-primary-foreground/50 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {currentYear} Welldonebeautysaloon. All rights reserved.</p>
+          <p>&copy; {currentYear} Well Beaute Home Spa. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

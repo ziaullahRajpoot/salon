@@ -26,7 +26,7 @@ const TeamCard = ({ name, role, bio, image, delay = 0 }: TeamCardProps) => {
         <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       <h3 className="text-2xl mb-1">{name}</h3>
-      <p className="text-[#1B8B7E] font-medium mb-4">{role}</p>
+      <p className="text-secondary font-medium mb-4">{role}</p>
       <p className="text-muted-foreground text-sm leading-relaxed max-w-none">{bio}</p>
     </motion.div>
   );

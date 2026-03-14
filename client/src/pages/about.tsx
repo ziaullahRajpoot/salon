@@ -51,9 +51,12 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-[#1B8B7E] font-medium tracking-widest uppercase mb-4 block">
-                  Our Story
-                </span>
+                <div className="flex items-center gap-3 mb-6">
+                  <img src="/logo.png" alt="Well Beaute logo" className="w-14 h-14 object-contain" />
+                  <span className="text-secondary font-medium tracking-widest uppercase text-sm">
+                    Our Story
+                  </span>
+                </div>
                 <h1 className="mb-8">Bringing Luxury Wellness to Your Home</h1>
                 <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
                   <p>
@@ -83,7 +86,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="absolute -bottom-8 -left-8 bg-card p-8 rounded-2xl shadow-xl border border-border/50 max-w-xs hidden md:block">
-                  <h3 className="text-4xl font-serif text-[#2E7BA8] mb-2">10+</h3>
+                  <h3 className="text-4xl font-serif text-primary mb-2">10+</h3>
                   <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
                     Years of Excellence
                   </p>
@@ -97,7 +100,8 @@ export default function AboutPage() {
         <section className="py-24 bg-primary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-[#1B8B7E] font-medium tracking-widest uppercase mb-2 block">
+              <img src="/logo.png" alt="Well Beaute logo" className="w-16 h-16 object-contain mx-auto mb-4 brightness-0 invert opacity-90" />
+              <span className="text-secondary font-medium tracking-widest uppercase mb-2 block">
                 What We Stand For
               </span>
               <h2 className="text-primary-foreground mb-4">Our Values</h2>
@@ -107,17 +111,14 @@ export default function AboutPage() {
                 {
                   title: "Professionalism",
                   desc: "Every therapist is fully certified, insured, and committed to the highest standards of care.",
-                  icon: "✦",
                 },
                 {
                   title: "Comfort & Safety",
                   desc: "We bring premium, sanitized equipment and use only the finest quality products.",
-                  icon: "✦",
                 },
                 {
                   title: "Personalized Care",
                   desc: "Each session is tailored to your specific needs, preferences, and wellness goals.",
-                  icon: "✦",
                 },
               ].map((value, index) => (
                 <motion.div
@@ -128,7 +129,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="text-center p-8 rounded-2xl bg-white/5 border border-white/10"
                 >
-                  <div className="text-[#1B8B7E] text-3xl mb-4">{value.icon}</div>
+                  <div className="w-12 h-12 rounded-full bg-secondary/20 border border-secondary/30 mx-auto mb-6" />
                   <h3 className="text-primary-foreground text-2xl mb-4">{value.title}</h3>
                   <p className="text-primary-foreground/70 max-w-none">{value.desc}</p>
                 </motion.div>
@@ -141,7 +142,7 @@ export default function AboutPage() {
         <section className="py-24 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-[#1B8B7E] font-medium tracking-widest uppercase mb-2 block">
+              <span className="text-secondary font-medium tracking-widest uppercase mb-2 block">
                 The Experts
               </span>
               <h2 className="mb-4">Meet Our Team</h2>

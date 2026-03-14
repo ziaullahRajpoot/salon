@@ -26,7 +26,7 @@ const PortfolioCard = ({ image, title, category, onClick, delay = 0 }: Portfolio
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-8">
-        <span className="text-white/80 text-sm font-medium tracking-wider uppercase mb-2 block">
+        <span className="text-primary-foreground/80 text-sm font-medium tracking-wider uppercase mb-2 block">
           {category}
         </span>
         <h3 className="text-primary-foreground text-2xl mb-4">{title}</h3>

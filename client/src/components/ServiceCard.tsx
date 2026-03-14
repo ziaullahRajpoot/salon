@@ -24,7 +24,7 @@ const ServiceCard = ({ title, description, image, delay = 0 }: ServiceCardProps)
           alt={title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       <div className="p-8 flex flex-col flex-grow">
@@ -32,7 +32,7 @@ const ServiceCard = ({ title, description, image, delay = 0 }: ServiceCardProps)
         <p className="text-muted-foreground mb-8 flex-grow max-w-none">{description}</p>
         <Link
           href={`/contact?service=${encodeURIComponent(title)}`}
-          className="inline-flex items-center text-[#2E7BA8] font-medium hover:text-[#1B8B7E] transition-colors mt-auto group/link"
+          className="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors mt-auto group/link"
           data-testid={`link-book-${title}`}
         >
           Book Appointment
