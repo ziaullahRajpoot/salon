@@ -9,34 +9,45 @@ import ReviewSlider from "@/components/ReviewSlider";
 
 const featuredServices = [
   {
-    title: "Swedish Relaxation Massage",
+    title: "Relaxation Massage",
     description:
       "A soothing full-body massage designed to reduce stress, improve circulation, and promote deep relaxation.",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874",
+    image: "/images/spa1.jpg",
   },
   {
-    title: "Aromatherapy Massage",
+    title: "Hot Stone Therapy",
     description:
-      "Experience therapeutic essential oils combined with gentle massage techniques to calm the body and mind.",
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935",
+      "Heated volcanic stones glide across tired muscles to melt away tension and restore balance.",
+    image: "/images/spa3.jpg",
   },
   {
-    title: "Rejuvenating Facial Treatment",
+    title: "Rejuvenating Facial",
     description:
-      "A revitalizing facial designed to cleanse, hydrate, and restore your natural glow.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881",
+      "A revitalizing facial using premium products to cleanse, hydrate, and restore your natural glow.",
+    image: "/images/spa4.jpg",
   },
+];
+
+const galleryImages = [
+  "/images/spa8.jpg",
+  "/images/spa10.jpg",
+  "/images/spa13.jpg",
+  "/images/spa9.jpg",
 ];
 
 export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Well Beaute Home Spa | Luxury Home Spa & Massage in Dubai</title>
+        <title>Well Done Beauty Salon | Luxury Home Spa & Beauty Services in Dubai</title>
         <meta
           name="description"
-          content="Relax and rejuvenate with professional home spa and massage services delivered to your doorstep in Dubai."
+          content="Premium at-home beauty and spa services in Dubai. Massage, facials, nails and more — delivered to your door by certified therapists."
         />
+        <meta property="og:title" content="Well Done Beauty Salon | Dubai Home Spa" />
+        <meta property="og:description" content="Luxury home spa and beauty services in Dubai. Book now on WhatsApp." />
+        <meta property="og:url" content="https://welldonebeautysalon.com/" />
+        <link rel="canonical" href="https://welldonebeautysalon.com/" />
       </Helmet>
 
       <Header />
@@ -50,11 +61,11 @@ export default function HomePage() {
               initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1.5 }}
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef"
-              alt="Luxury spa massage"
-              className="w-full h-full object-cover"
+              src="/images/spa8.jpg"
+              alt="Well Done Beauty Salon luxury spa setup"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,19 +75,18 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="max-w-2xl"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <img src="/logo.png" alt="Well Beaute logo" className="w-14 h-14 object-contain" />
-                <span className="text-white/80 font-medium tracking-widest uppercase text-sm">
-                  Home Spa Experience
-                </span>
+              <div className="flex items-center gap-4 mb-6">
+                <img src="/logo.png" alt="Well Done Beauty Salon logo" className="w-16 h-16 object-contain" />
+                <div>
+                  <span className="text-white font-serif text-xl font-bold block">Well Done</span>
+                  <span className="text-white/70 text-xs tracking-widest uppercase">Beauty Salon</span>
+                </div>
               </div>
 
               <h1 className="text-white mb-6">Relax. Rejuvenate. Restore.</h1>
 
-              <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-none">
-                Enjoy a premium spa experience in the comfort of your home. Our
-                professional therapists bring relaxation, wellness, and beauty
-                directly to you in Dubai.
+              <p className="text-lg text-white/80 mb-10 leading-relaxed">
+                Dubai's premier at-home beauty salon. Our certified therapists bring luxury massage, facials, and beauty services directly to you — 10am to midnight, every day.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -87,26 +97,29 @@ export default function HomePage() {
                 >
                   Book a Session
                 </Link>
-                <Link
-                  href="/services"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-full text-center font-medium uppercase tracking-wider transition-all duration-300"
-                  data-testid="link-explore-services"
+                <a
+                  href="https://wa.me/971509270282?text=Hello,%20I%20want%20to%20book%20a%20home%20spa%20service."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#20bc5c] text-white px-8 py-4 rounded-full text-center font-medium uppercase tracking-wider transition-all duration-300 shadow-lg"
+                  data-testid="link-whatsapp-hero"
                 >
-                  Explore Services
-                </Link>
+                  WhatsApp Us
+                </a>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="py-16 bg-muted/40">
+        {/* Trust Bar */}
+        <section className="py-12 bg-muted/40 border-y border-border/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               {[
-                { icon: "🏠", label: "At-Home Service", desc: "We come to you — no travel, no hassle" },
-                { icon: "✓", label: "Certified Therapists", desc: "Fully qualified professionals you can trust" },
-                { icon: "⏱", label: "Always On Time", desc: "Punctual, reliable, and ready to serve" },
+                { icon: "🏠", label: "At-Home Service", desc: "We come to you — no travel needed" },
+                { icon: "✓", label: "Certified Therapists", desc: "Fully qualified professionals" },
+                { icon: "🕙", label: "10am – Midnight", desc: "7 days a week, all year round" },
+                { icon: "⭐", label: "Premium Products", desc: "Only the finest quality brands" },
               ].map((item) => (
                 <motion.div
                   key={item.label}
@@ -115,11 +128,11 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="flex flex-col items-center gap-3 p-6"
                 >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl font-bold">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-semibold">{item.label}</h3>
-                  <p className="text-muted-foreground text-sm max-w-none">{item.desc}</p>
+                  <h3 className="text-lg font-semibold font-serif">{item.label}</h3>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -154,6 +167,17 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Brand Gallery Strip */}
+        <section className="py-4 bg-muted/20 overflow-hidden">
+          <div className="flex gap-4">
+            {[...galleryImages, ...galleryImages].map((img, i) => (
+              <div key={i} className="shrink-0 w-64 h-48 rounded-xl overflow-hidden">
+                <img src={img} alt="Well Done Beauty Salon" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
+
         <ReviewSlider />
 
         {/* CTA Section */}
@@ -163,19 +187,28 @@ export default function HomePage() {
             <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-white blur-3xl" />
           </div>
           <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <img src="/logo.png" alt="Well Beaute logo" className="w-20 h-20 object-contain mx-auto mb-6 brightness-0 invert opacity-90" />
+            <img src="/logo.png" alt="Well Done Beauty Salon logo" className="w-20 h-20 object-contain mx-auto mb-6 brightness-0 invert opacity-90" />
             <h2 className="mb-6 text-4xl md:text-5xl">Ready to Relax at Home?</h2>
-            <p className="text-primary-foreground/80 text-lg mb-10 max-w-none">
-              Book your home spa session today and enjoy a relaxing experience
-              without leaving your home.
+            <p className="text-primary-foreground/80 text-lg mb-10">
+              Book your home beauty session today. Available every day, 10am to midnight.
             </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-white text-primary hover:bg-secondary hover:text-secondary-foreground px-10 py-4 rounded-full font-medium uppercase tracking-wider transition-all duration-300 shadow-lg"
-              data-testid="link-book-appointment-cta"
-            >
-              Book Your Appointment
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-block bg-white text-primary hover:bg-secondary hover:text-secondary-foreground px-10 py-4 rounded-full font-medium uppercase tracking-wider transition-all duration-300 shadow-lg"
+                data-testid="link-book-appointment-cta"
+              >
+                Book Your Appointment
+              </Link>
+              <a
+                href="https://wa.me/971509270282?text=Hello,%20I%20want%20to%20book%20a%20home%20beauty%20service."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#25D366] hover:bg-[#20bc5c] text-white px-10 py-4 rounded-full font-medium uppercase tracking-wider transition-all duration-300 shadow-lg"
+              >
+                WhatsApp Us Now
+              </a>
+            </div>
           </div>
         </section>
       </main>

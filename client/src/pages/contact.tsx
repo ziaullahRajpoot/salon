@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { SiWhatsapp, SiInstagram } from "react-icons/si";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -30,7 +31,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Opening Hours",
-    detail: "Mon–Fri: 9am–8pm | Sat: 10am–6pm",
+    detail: "Every Day: 10:00 AM – 12:00 Midnight",
     link: null,
   },
 ];
@@ -90,11 +91,12 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Well Beaute Home Spa</title>
+        <title>Contact Us | Well Done Beauty Salon Dubai</title>
         <meta
           name="description"
-          content="Get in touch to book your appointment or ask any questions about our services."
+          content="Book your home beauty or spa appointment in Dubai. WhatsApp us or fill the form — available 10am to midnight, every day."
         />
+        <link rel="canonical" href="https://welldonebeautysalon.com/contact" />
       </Helmet>
 
       <Header />
@@ -104,7 +106,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-4">
-              <img src="/logo.png" alt="Well Beaute logo" className="w-16 h-16 object-contain" />
+              <img src="/logo.png" alt="Well Done Beauty Salon logo" className="w-16 h-16 object-contain" />
             </div>
             <motion.span
               initial={{ opacity: 0 }}
@@ -126,9 +128,32 @@ export default function ContactPage() {
               transition={{ delay: 0.1 }}
               className="text-lg text-muted-foreground max-w-2xl mx-auto font-light"
             >
-              Ready to relax? Reach out to book an appointment or ask any
-              questions. We're here to help.
+              Ready to relax at home? Reach out via WhatsApp for the fastest reply, or fill in the form below.
             </motion.p>
+          </div>
+
+          {/* Quick Contact Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <a
+              href="https://wa.me/971509270282?text=Hello,%20I%20want%20to%20book%20a%20home%20beauty%20service."
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-whatsapp-quick"
+              className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bc5c] text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 shadow-lg"
+            >
+              <SiWhatsapp size={22} />
+              Book via WhatsApp
+            </a>
+            <a
+              href="https://www.instagram.com/wellbeautee?igsh=ZDBscHptemltaGZ6&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-instagram-quick"
+              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 shadow-lg hover:opacity-90"
+            >
+              <SiInstagram size={22} />
+              Follow on Instagram
+            </a>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -207,11 +232,14 @@ export default function ContactPage() {
                   >
                     <option value="" disabled>Select a service</option>
                     <option value="Swedish Relaxation Massage">Swedish Relaxation Massage</option>
-                    <option value="Deep Tissue Massage">Deep Tissue Massage</option>
-                    <option value="Aromatherapy Massage">Aromatherapy Massage</option>
+                    <option value="Hot Stone Therapy">Hot Stone Therapy</option>
+                    <option value="Wood Therapy (Maderotherapy)">Wood Therapy (Maderotherapy)</option>
+                    <option value="Cupping Therapy">Cupping Therapy</option>
                     <option value="Hydrating Facial Treatment">Hydrating Facial Treatment</option>
-                    <option value="Luxury Home Spa Experience">Luxury Home Spa Experience</option>
-                    <option value="Couples Massage at Home">Couples Massage at Home</option>
+                    <option value="Advanced Facial Technology">Advanced Facial Technology</option>
+                    <option value="Gel Nail Treatment">Gel Nail Treatment</option>
+                    <option value="Full Nail Care">Full Nail Care</option>
+                    <option value="Signature Home Spa Experience">Signature Home Spa Experience</option>
                     <option value="General Inquiry">General Inquiry</option>
                   </select>
                 </div>
@@ -226,7 +254,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="How can we help you today? Include your address and preferred timing."
+                    placeholder="Please share your address, preferred date and time, and any special requests."
                     data-testid="textarea-message"
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-shadow min-h-[120px] resize-y"
                   />
@@ -247,7 +275,7 @@ export default function ContactPage() {
               </form>
             </motion.div>
 
-            {/* Contact Info & Map */}
+            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -277,34 +305,41 @@ export default function ContactPage() {
                 })}
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50 h-[300px] relative bg-muted">
-                <iframe
-                  title="Dubai Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178544841234!2d55.2744!3d25.1972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzUwLjkiTiA1NcKwMTYnMjcuOCJF!5e0!3m2!1sen!2sae!4v1621530000000!5m2!1sen!2sae"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0"
+              {/* Brand Image */}
+              <div className="rounded-2xl overflow-hidden shadow-lg h-64">
+                <img
+                  src="/images/spa8.jpg"
+                  alt="Well Done Beauty Salon branded setup"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* WhatsApp CTA */}
-              <div className="bg-secondary/10 border border-secondary/20 rounded-2xl p-8 text-center">
-                <h3 className="text-2xl mb-3">Prefer to Message Directly?</h3>
-                <p className="text-muted-foreground mb-6 max-w-none">
-                  Chat with us on WhatsApp for the fastest response.
+              {/* Social Links */}
+              <div className="bg-secondary/10 border border-secondary/20 rounded-2xl p-8">
+                <h3 className="text-2xl font-serif mb-2">Follow Us</h3>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  See our latest work and client results on Instagram.
                 </p>
-                <a
-                  href="https://wa.me/971509270282?text=Hello,%20I%20want%20to%20book%20a%20home%20spa%20service."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-whatsapp-contact"
-                  className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-3 rounded-full font-medium hover:bg-[#20bc5c] transition-colors shadow-md"
-                >
-                  Chat on WhatsApp
-                </a>
+                <div className="flex gap-4">
+                  <a
+                    href="https://www.instagram.com/wellbeautee?igsh=ZDBscHptemltaGZ6&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity shadow-md"
+                  >
+                    <SiInstagram size={18} />
+                    @wellbeautee
+                  </a>
+                  <a
+                    href="https://wa.me/971509270282"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-medium hover:bg-[#20bc5c] transition-colors shadow-md"
+                  >
+                    <SiWhatsapp size={18} />
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

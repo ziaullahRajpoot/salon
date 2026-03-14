@@ -15,12 +15,19 @@ interface PortfolioItem {
 }
 
 const portfolioItems: PortfolioItem[] = [
-  { id: 1, category: "Massage", title: "Deep Relaxation Session", image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874" },
-  { id: 2, category: "Facial", title: "Glowing Skin Treatment", image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881" },
-  { id: 3, category: "Spa", title: "Aromatherapy Bliss", image: "https://images.unsplash.com/photo-1552693673-1bf958298935" },
-  { id: 4, category: "Massage", title: "Hot Stone Therapy", image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1" },
-  { id: 5, category: "Wellness", title: "Couples Retreat", image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35" },
-  { id: 6, category: "Spa", title: "Luxury Home Spa", image: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea" },
+  { id: 1, category: "Massage", title: "Relaxation Setup", image: "/images/spa1.jpg" },
+  { id: 2, category: "Cupping Therapy", title: "Cupping Session", image: "/images/spa2.jpg" },
+  { id: 3, category: "Hot Stone Massage", title: "Hot Stone Therapy", image: "/images/spa3.jpg" },
+  { id: 4, category: "Facial", title: "Premium Skincare", image: "/images/spa4.jpg" },
+  { id: 5, category: "Facial", title: "Beauty Tools", image: "/images/spa5.jpg" },
+  { id: 6, category: "Nails", title: "Nail Art Collection", image: "/images/spa6.jpg" },
+  { id: 7, category: "Nails", title: "Gel Polish Range", image: "/images/spa7.jpg" },
+  { id: 8, category: "Spa", title: "Signature Setup", image: "/images/spa8.jpg" },
+  { id: 9, category: "Nails", title: "Colour Selection", image: "/images/spa9.jpg" },
+  { id: 10, category: "Massage", title: "Wood Therapy Tools", image: "/images/spa10.jpg" },
+  { id: 11, category: "Massage", title: "Maderotherapy", image: "/images/spa11.jpg" },
+  { id: 12, category: "Massage", title: "Therapeutic Session", image: "/images/spa12.jpg" },
+  { id: 13, category: "Massage", title: "Evening Spa Ritual", image: "/images/spa13.jpg" },
 ];
 
 export default function PortfolioPage() {
@@ -29,11 +36,12 @@ export default function PortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>Gallery | Well Beaute Home Spa</title>
+        <title>Gallery | Well Done Beauty Salon Dubai</title>
         <meta
           name="description"
-          content="View our gallery of stunning spa and massage experiences."
+          content="View our gallery of stunning home spa and beauty treatments by Well Done Beauty Salon, Dubai."
         />
+        <link rel="canonical" href="https://welldonebeautysalon.com/portfolio" />
       </Helmet>
 
       <Header />
@@ -43,7 +51,7 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-4">
-              <img src="/logo.png" alt="Well Beaute logo" className="w-16 h-16 object-contain" />
+              <img src="/logo.png" alt="Well Done Beauty Salon logo" className="w-16 h-16 object-contain" />
             </div>
             <motion.span
               initial={{ opacity: 0 }}
@@ -65,17 +73,16 @@ export default function PortfolioPage() {
               transition={{ delay: 0.1 }}
               className="text-lg text-muted-foreground max-w-2xl mx-auto"
             >
-              Explore our gallery of relaxing treatments and see the dedication
-              and skill behind every service we provide.
+              Real photos from our actual sessions — the quality and care you can expect when you book with us.
             </motion.p>
           </div>
 
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
             {portfolioItems.map((item, index) => (
               <div key={item.id} className="break-inside-avoid">
                 <PortfolioCard
                   {...item}
-                  delay={index * 0.1}
+                  delay={index * 0.05}
                   onClick={() => setSelectedImage(item)}
                 />
               </div>

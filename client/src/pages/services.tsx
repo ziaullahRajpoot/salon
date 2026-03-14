@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const categories = ["All", "Massage", "Spa", "Facial", "Wellness"];
+const categories = ["All", "Massage", "Facial", "Nails", "Wellness"];
 
 const allServices = [
   {
@@ -14,42 +14,63 @@ const allServices = [
     title: "Swedish Relaxation Massage",
     description:
       "A gentle full-body massage designed to relieve stress, improve circulation, and help your body completely relax in the comfort of your home.",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874",
+    image: "/images/spa1.jpg",
   },
   {
     category: "Massage",
-    title: "Deep Tissue Massage",
+    title: "Hot Stone Therapy",
     description:
-      "Focused massage techniques targeting deeper muscle layers to release chronic tension, muscle stiffness, and fatigue.",
-    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1",
+      "Heated volcanic stones melt away muscle tension and relieve chronic pain, leaving you deeply relaxed and restored.",
+    image: "/images/spa3.jpg",
   },
   {
-    category: "Spa",
-    title: "Luxury Home Spa Experience",
+    category: "Massage",
+    title: "Wood Therapy (Maderotherapy)",
     description:
-      "Transform your home into a relaxing spa environment with a combination of soothing massage, aromatherapy, and calming treatments.",
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935",
+      "Ancient Colombian technique using wooden tools to contour the body, reduce cellulite, and boost circulation.",
+    image: "/images/spa10.jpg",
+  },
+  {
+    category: "Massage",
+    title: "Cupping Therapy",
+    description:
+      "Traditional cupping technique to relieve muscle stiffness, improve blood flow, and detox the body.",
+    image: "/images/spa2.jpg",
   },
   {
     category: "Facial",
     title: "Hydrating Facial Treatment",
     description:
-      "A rejuvenating facial designed to deeply cleanse, hydrate, and refresh your skin while restoring a natural healthy glow.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881",
+      "A rejuvenating facial using premium Dr. Renaud products to deeply cleanse, hydrate, and refresh your skin.",
+    image: "/images/spa4.jpg",
   },
   {
-    category: "Spa",
-    title: "Aromatherapy Massage",
+    category: "Facial",
+    title: "Advanced Facial Technology",
     description:
-      "Relax your mind and body with therapeutic essential oils combined with gentle massage techniques.",
-    image: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea",
+      "Cutting-edge facial tools combined with expert technique for visible skin tightening and glow results.",
+    image: "/images/spa5.jpg",
+  },
+  {
+    category: "Nails",
+    title: "Gel Nail Treatment",
+    description:
+      "Long-lasting gel manicure with a wide colour selection — done professionally at your home.",
+    image: "/images/spa6.jpg",
+  },
+  {
+    category: "Nails",
+    title: "Full Nail Care",
+    description:
+      "Comprehensive nail treatment including shaping, cuticle care, and polish with premium Lola Lee products.",
+    image: "/images/spa9.jpg",
   },
   {
     category: "Wellness",
-    title: "Couples Massage at Home",
+    title: "Signature Home Spa Experience",
     description:
-      "Enjoy a relaxing massage session with your partner, designed to create a peaceful and memorable wellness experience together.",
-    image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35",
+      "Our full luxury home spa package combining massage, facial, and beauty treatments for a complete wellness day.",
+    image: "/images/spa8.jpg",
   },
 ];
 
@@ -64,11 +85,12 @@ export default function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Our Services | Well Beaute Home Spa</title>
+        <title>Our Services | Well Done Beauty Salon Dubai</title>
         <meta
           name="description"
-          content="Explore our relaxing home spa and massage services designed to help you unwind and rejuvenate."
+          content="Explore our full range of home spa services in Dubai — massage, facials, nails, and more. Available daily 10am to midnight."
         />
+        <link rel="canonical" href="https://welldonebeautysalon.com/services" />
       </Helmet>
 
       <Header />
@@ -78,7 +100,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-4">
-              <img src="/logo.png" alt="Well Beaute logo" className="w-16 h-16 object-contain" />
+              <img src="/logo.png" alt="Well Done Beauty Salon logo" className="w-16 h-16 object-contain" />
             </div>
             <motion.span
               initial={{ opacity: 0 }}
@@ -100,8 +122,7 @@ export default function ServicesPage() {
               transition={{ delay: 0.1 }}
               className="text-lg text-muted-foreground max-w-2xl mx-auto"
             >
-              Discover our relaxing range of home spa and wellness services
-              designed to help you unwind, recharge, and feel your best.
+              All services are delivered at your home by certified therapists. Available every day from 10am to midnight — no off days.
             </motion.p>
           </div>
 
@@ -132,7 +153,7 @@ export default function ServicesPage() {
               <ServiceCard
                 key={`${service.title}-${index}`}
                 {...service}
-                delay={index * 0.1}
+                delay={index * 0.08}
               />
             ))}
           </div>

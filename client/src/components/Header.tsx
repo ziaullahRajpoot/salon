@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -37,20 +38,20 @@ const Header = () => {
           <Link href="/" className="flex items-center gap-3 group">
             <img
               src="/logo.png"
-              alt="Well Beaute Home Spa logo"
+              alt="Well Done Beauty Salon logo"
               className="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300"
             />
             <div className="leading-tight">
-              <span className="font-serif text-xl font-bold tracking-tight text-foreground block">
-                Well Beaute
+              <span className="font-serif text-lg font-bold tracking-tight text-foreground block">
+                Well Done
               </span>
               <span className="text-xs font-medium text-secondary uppercase tracking-widest">
-                Home Spa
+                Beauty Salon
               </span>
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => {
               const isActive = location === item.path;
               return (
@@ -67,9 +68,22 @@ const Header = () => {
                 </Link>
               );
             })}
+
+            <a
+              href="https://wa.me/971509270282"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-whatsapp-header"
+              title="Chat on WhatsApp"
+              className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bc5c] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              <SiWhatsapp size={16} />
+              <span>WhatsApp</span>
+            </a>
+
             <Link
               href="/contact"
-              className="bg-primary hover:bg-secondary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:shadow-lg active:scale-95"
+              className="bg-primary hover:bg-secondary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:shadow-lg active:scale-95"
             >
               Book Now
             </Link>
@@ -111,7 +125,17 @@ const Header = () => {
                   </Link>
                 );
               })}
-              <div className="pt-6 border-t border-border">
+              <a
+                href="https://wa.me/971509270282"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-full text-lg font-medium transition-colors hover:bg-[#20bc5c]"
+              >
+                <SiWhatsapp size={20} />
+                Chat on WhatsApp
+              </a>
+              <div className="pt-2">
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
