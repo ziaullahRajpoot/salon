@@ -22,80 +22,91 @@ const Header = () => {
     { label: "Services", path: "/services" },
     { label: "Portfolio", path: "/portfolio" },
     { label: "About", path: "/about" },
+    { label: "Blogs", path: "/blog" },
     { label: "Contact", path: "/contact" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-40 bg-white transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md py-3"
-          : "bg-transparent py-5"
+          ? "shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-2"
+          : "shadow-[0_1px_4px_rgba(0,0,0,0.06)] py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <img
-              src="/logo.png"
-              alt="Well Done Beauty Salon logo"
-              className="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300"
-            />
+            <div className="relative">
+              <img
+                src="/logo.png"
+                alt="Well Done Beauty Salon logo"
+                className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="leading-tight">
-              <span className="font-serif text-lg font-bold tracking-tight text-foreground block">
+              <span className="font-serif text-lg font-bold tracking-tight text-neutral-900 block">
                 Well Done
               </span>
-              <span className="text-xs font-medium text-secondary uppercase tracking-widest">
+              <span className="text-[10px] font-semibold text-rose-400 uppercase tracking-[0.2em]">
                 Beauty Salon
               </span>
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = location === item.path;
               return (
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`text-sm font-medium uppercase tracking-wider transition-colors duration-200 ${
+                  className={`relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors duration-200 rounded-full ${
                     isActive
-                      ? "text-secondary"
-                      : "text-foreground/75 hover:text-primary"
+                      ? "text-rose-500 bg-rose-50"
+                      : "text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50"
                   }`}
                 >
                   {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-rose-400"
+                    />
+                  )}
                 </Link>
               );
             })}
+          </nav>
 
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="https://wa.me/971509270282"
               target="_blank"
               rel="noopener noreferrer"
               data-testid="link-whatsapp-header"
               title="Chat on WhatsApp"
-              className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bc5c] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+              className="flex items-center gap-2 border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
             >
-              <SiWhatsapp size={16} />
+              <SiWhatsapp size={15} />
               <span>WhatsApp</span>
             </a>
 
             <Link
               href="/contact"
-              className="bg-primary hover:bg-secondary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:shadow-lg active:scale-95"
+              className="bg-neutral-900 hover:bg-rose-500 text-white px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:shadow-lg active:scale-95"
             >
               Book Now
             </Link>
-          </nav>
+          </div>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-neutral-600 hover:text-neutral-900 transition-colors"
             aria-label="Toggle menu"
             data-testid="button-mobile-menu"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -107,9 +118,9 @@ const Header = () => {
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-x-0 top-[68px] bg-background border-t border-border overflow-y-auto"
+            className="md:hidden fixed inset-x-0 top-[68px] bg-white border-t border-neutral-100 overflow-y-auto"
           >
-            <nav className="flex flex-col px-6 py-8 space-y-6">
+            <nav className="flex flex-col px-6 py-8 space-y-2">
               {navItems.map((item) => {
                 const isActive = location === item.path;
                 return (
@@ -117,29 +128,32 @@ const Header = () => {
                     key={item.path}
                     href={item.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-2xl font-serif transition-colors duration-200 ${
-                      isActive ? "text-secondary" : "text-foreground hover:text-primary"
+                    className={`text-xl font-serif px-4 py-3 rounded-xl transition-colors duration-200 ${
+                      isActive
+                        ? "text-rose-500 bg-rose-50"
+                        : "text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50"
                     }`}
                   >
                     {item.label}
                   </Link>
                 );
               })}
-              <a
-                href="https://wa.me/971509270282"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-full text-lg font-medium transition-colors hover:bg-[#20bc5c]"
-              >
-                <SiWhatsapp size={20} />
-                Chat on WhatsApp
-              </a>
-              <div className="pt-2">
+
+              <div className="pt-4 space-y-3">
+                <a
+                  href="https://wa.me/971509270282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-3 border-2 border-[#25D366] text-[#25D366] px-6 py-3.5 rounded-full text-base font-medium transition-colors hover:bg-[#25D366] hover:text-white"
+                >
+                  <SiWhatsapp size={18} />
+                  Chat on WhatsApp
+                </a>
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="inline-block w-full text-center bg-primary text-primary-foreground px-6 py-4 rounded-full text-lg font-medium transition-colors hover:bg-secondary"
+                  className="flex items-center justify-center w-full bg-neutral-900 hover:bg-rose-500 text-white px-6 py-3.5 rounded-full text-base font-medium transition-colors"
                 >
                   Book Appointment
                 </Link>
