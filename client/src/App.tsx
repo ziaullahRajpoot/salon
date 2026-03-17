@@ -10,6 +10,7 @@ import ServicesPage from "@/pages/services";
 import PortfolioPage from "@/pages/portfolio";
 import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
+import PrivacyPolicyPage from "@/pages/privacy-policy";
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route component={NotFound} />
     </Switch>
   );

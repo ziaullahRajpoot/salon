@@ -106,12 +106,15 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-primary-foreground/50 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {currentYear} Well Done Beauty Salon. All rights reserved.</p>
-          <p>
-            <a href="https://welldonebeautysalon.com" className="hover:text-white transition-colors">
-              welldonebeautysalon.com
-            </a>
-          </p>
+           <p>&copy; {currentYear} Well Done Beauty Salon. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <a href="https://welldonebeautysalon.com" className="hover:text-white transition-colors">
+                welldonebeautysalon.com
+              </a>
+            </div>
         </div>
       </div>
     </footer>
