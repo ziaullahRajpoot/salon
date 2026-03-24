@@ -11,6 +11,54 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+     slug: "home-spa-tips-dubai-summer",
+    title: "10 Essential Home Spa Tips for Dubai's Scorching Summer",
+    excerpt: "Dubai summers are brutal — extreme heat, humidity, and relentless sun. Here's how to keep your skin, body, and mind refreshed with professional at-home spa treatments during the hottest months of the year.",
+    category: "Lifestyle",
+    readTime: "6 min read",
+    date: "March 24, 2026",
+    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=800&q=80",
+    content: `
+      <h2>Surviving Dubai Summer with a Home Spa Routine</h2>
+      <p>Dubai summers are unlike anything else in the world. From May to September, temperatures regularly exceed 45°C, humidity can reach 90%, and stepping outside for even a few minutes leaves you drained and dehydrated. For residents who refuse to spend the entire summer hiding indoors, a consistent at-home spa routine is not just a luxury — it is an essential part of staying healthy, refreshed, and feeling your best.</p>
+      <p>At Well Done Beauty Salon, we bring professional spa treatments directly to your home anywhere in Dubai, so you never have to brave the summer heat just to enjoy a world-class beauty or wellness experience. Here are our top 10 expert tips for making the most of home spa treatments during Dubai's summer months.</p>
+ 
+      <h2>1. Hydrate Your Skin from the Inside Out</h2>
+      <p>The most important thing you can do for your skin in Dubai summer is hydrate aggressively. The combination of extreme outdoor heat and heavy indoor air conditioning creates a constant cycle of moisture loss that leaves skin dry, tight, and prone to irritation. Drink a minimum of 3 litres of water daily, incorporate hydrating foods like cucumber, watermelon, and coconut water into your diet, and use a high-quality hydrating serum both morning and night.</p>
+      <p>Our professional hydrating facial treatments use medical-grade hyaluronic acid serums that provide deep, lasting moisture well beyond what over-the-counter products can achieve. Booking a monthly hydrating facial during summer is one of the best investments you can make for your skin.</p>
+ 
+      <h2>2. Schedule Massages in the Evening</h2>
+      <p>During Dubai summer, the best time for at-home massage therapy is in the evening when temperatures begin to drop slightly and your body has had time to cool down from the day. Evening massages also promote deeper sleep, which is particularly valuable in summer when the heat can disrupt normal sleep patterns.</p>
+      <p>Our therapists are available until midnight every day, making it easy to book a relaxing massage at whatever time suits your summer schedule best.</p>
+ 
+      <h2>3. Use Cooling Treatments for Sun-Exposed Skin</h2>
+      <p>Even with regular sunscreen application, Dubai's intense UV radiation takes a toll on exposed skin. After beach visits, pool days, or any extended time outdoors, treat your skin with cooling aloe vera gel, chilled facial mists, or a professional soothing facial treatment. These treatments reduce inflammation, calm redness, and help repair the skin barrier that UV exposure damages over time.</p>
+ 
+      <h2>4. Prioritize Foot Care in Summer</h2>
+      <p>Sandals and open shoes are the footwear of choice during Dubai summer, which means your feet are constantly exposed to heat, dust, and drying conditions. Regular professional pedicures keep your feet looking and feeling their best, removing dead skin, hydrating dry heels, and maintaining nail health. Our mobile nail technicians bring everything needed for a complete pedicure experience to your home.</p>
+ 
+      <h2>5. Try Lymphatic Drainage Massage for Heat-Related Swelling</h2>
+      <p>Many Dubai residents experience swelling in the legs, ankles, and feet during summer — a common response to prolonged heat exposure that causes fluid retention. Lymphatic drainage massage is specifically designed to reduce this swelling by stimulating the lymphatic system to remove excess fluid from tissues. Even a single session can provide significant relief, and regular treatments throughout the summer can prevent chronic swelling from developing.</p>
+ 
+      <h2>6. Keep Your Scalp and Hair Healthy</h2>
+      <p>Dubai summer is particularly harsh on hair and scalp. The combination of intense UV radiation, chlorinated pool water, salty sea water, and heavy air conditioning strips moisture from hair, leading to dryness, breakage, and scalp irritation. Incorporate weekly deep conditioning treatments into your routine, use UV-protective hair products, and rinse hair thoroughly after swimming.</p>
+ 
+      <h2>7. Book Early Morning or Late Evening Treatments</h2>
+      <p>If you need to go out for any reason related to your beauty routine, plan appointments for early morning before 9am or after 7pm when temperatures are more manageable. Better yet, eliminate the need to go out entirely by booking at-home beauty services that come to you — no heat, no traffic, no stress.</p>
+ 
+      <h2>8. Create a Cool, Relaxing Spa Environment at Home</h2>
+      <p>Set your air conditioning to around 22°C before your treatment — cold enough to be comfortable but not so cold that muscles tighten up. Use blackout curtains to keep the room cool and dark, have chilled water or herbal tea ready, and consider using a cool mist diffuser with peppermint or eucalyptus essential oils for a refreshing, spa-like atmosphere.</p>
+ 
+      <h2>9. Protect and Nourish Your Nails</h2>
+      <p>Frequent hand washing, hand sanitiser use, and air conditioning exposure during summer months can leave nails brittle and prone to breaking. Regular gel nail treatments provide a protective layer that strengthens nails while keeping them looking beautiful. Apply cuticle oil daily and wear gloves when doing household tasks involving water or cleaning products.</p>
+ 
+      <h2>10. Make Self-Care a Non-Negotiable Summer Ritual</h2>
+      <p>The most important tip of all is simply to prioritize your wellbeing during the challenging summer months. Scheduling regular professional treatments — whether weekly massages, monthly facials, or fortnightly nail appointments — gives you something to look forward to and ensures your health and appearance remain at their best throughout the summer.</p>
+ 
+      <h2>Book Your Summer Home Spa Experience in Dubai</h2>
+      <p>Well Done Beauty Salon offers a complete range of professional beauty and wellness treatments delivered to your home, hotel, or villa anywhere in Dubai — every day from 10am to midnight. Beat the summer heat without stepping outside. Contact us via WhatsApp to book your session today.</p>
+    `,
+  },{
     slug: "top-5-massage-benefits-dubai",
     title: "Top 5 Massage Benefits for Dubai Residents",
     excerpt: "Living in Dubai's fast-paced environment takes a toll on your body and mind. Discover why regular massage therapy is essential for your wellbeing in the UAE.",
