@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
@@ -13,19 +13,19 @@ const featuredServices = [
   {
     title: "Relaxation Massage",
     description:
-      "A soothing full-body massage designed to reduce stress, improve circulation, and promote deep relaxation.",
+      "A soothing full-body massage designed to reduce stress, improve circulation, and promote deep relaxation — delivered to your home in JVC, Dubai Marina, and across Dubai.",
     image: "/images/spa1.jpg",
   },
   {
     title: "Hot Stone Therapy",
     description:
-      "Heated volcanic stones glide across tired muscles to melt away tension and restore balance.",
+      "Heated volcanic stones glide across tired muscles to melt away tension and restore balance — available at your home anywhere in Dubai.",
     image: "/images/spa3.jpg",
   },
   {
     title: "Rejuvenating Facial",
     description:
-      "A revitalizing facial using premium products to cleanse, hydrate, and restore your natural glow.",
+      "A revitalizing facial using premium products to cleanse, hydrate, and restore your natural glow — brought to your door in JVC and all Dubai areas.",
     image: "/images/spa4.jpg",
   },
 ];
@@ -39,17 +39,32 @@ const galleryImages = [
 
 const featuredBlogs = blogPosts.slice(0, 3);
 
+const serviceAreas = [
+  "Jumeirah Village Circle (JVC)",
+  "Dubai Marina",
+  "Downtown Dubai",
+  "Jumeirah",
+  "Business Bay",
+  "Palm Jumeirah",
+  "JLT",
+  "Al Barsha",
+  "Arabian Ranches",
+  "Mirdif",
+  "Deira",
+  "Bur Dubai",
+];
+
 export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Well Done Beauty Salon | Luxury Home Spa & Beauty Services in Dubai</title>
+        <title>Home Massage & Spa in JVC Dubai | Well Done Beauty Salon</title>
         <meta
           name="description"
-          content="Premium at-home beauty and spa services in Dubai. Massage, facials, nails and more — delivered to your door by certified therapists."
+          content="Premium at-home massage and spa services in JVC, Dubai Marina, Downtown Dubai and across UAE. Certified therapists come to you — 10am to midnight, every day."
         />
-        <meta property="og:title" content="Well Done Beauty Salon | Dubai Home Spa" />
-        <meta property="og:description" content="Luxury home spa and beauty services in Dubai. Book now on WhatsApp." />
+        <meta property="og:title" content="Home Massage & Spa in JVC Dubai | Well Done Beauty Salon" />
+        <meta property="og:description" content="Luxury home spa and beauty services in JVC and across Dubai. Book now on WhatsApp." />
         <meta property="og:url" content="https://welldonebeautysalon.com/" />
         <link rel="canonical" href="https://welldonebeautysalon.com/" />
       </Helmet>
@@ -66,7 +81,7 @@ export default function HomePage() {
               animate={{ scale: 1 }}
               transition={{ duration: 1.5 }}
               src="/images/spa8.jpg"
-              alt="Well Done Beauty Salon luxury spa setup"
+              alt="Well Done Beauty Salon luxury home spa setup in JVC Dubai"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
@@ -87,10 +102,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <h1 className="text-white mb-6">Relax. Rejuvenate. Restore.</h1>
+              <h1 className="text-white mb-4">Relax. Rejuvenate. Restore.</h1>
+
+              <p className="text-base text-white/60 mb-3 flex items-center gap-2">
+                <MapPin size={14} className="text-rose-400" />
+                Serving JVC, Dubai Marina, Downtown Dubai & all UAE areas
+              </p>
 
               <p className="text-lg text-white/80 mb-10 leading-relaxed">
-                Dubai's premier at-home beauty salon. Our certified therapists bring luxury massage, facials, and beauty services directly to you — 10am to midnight, every day.
+                Dubai's premier at-home beauty salon. Our certified therapists bring luxury massage, facials, and beauty services directly to your home in JVC, Dubai Marina, Jumeirah and beyond — 10am to midnight, every day.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -120,7 +140,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
               {[
-                { icon: "🏠", label: "At-Home Service", desc: "We come to you — no travel needed" },
+                { icon: "🏠", label: "At-Home Service in JVC & Dubai", desc: "We come to you — no travel needed" },
                 { icon: "✓", label: "Certified Therapists", desc: "Fully qualified professionals" },
                 { icon: "🕙", label: "10am – Midnight", desc: "7 days a week, all year round" },
                 { icon: "⭐", label: "Premium Products", desc: "Only the finest quality brands" },
@@ -150,7 +170,10 @@ export default function HomePage() {
               <span className="text-secondary font-medium tracking-widest uppercase mb-2 block">
                 Our Treatments
               </span>
-              <h2>Popular Spa Services</h2>
+              <h2>Popular Spa Services in Dubai</h2>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                Professional massage and beauty treatments delivered to your home in JVC, Dubai Marina, Jumeirah, and all Dubai communities.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -171,12 +194,48 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Service Areas Section */}
+        <section className="py-16 bg-primary/5 border-y border-border/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <span className="text-secondary font-medium tracking-widest uppercase mb-2 block">
+                Where We Serve
+              </span>
+              <h2 className="text-3xl font-serif">Home Spa Service Areas in Dubai</h2>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                We provide professional at-home massage, spa, and beauty services across all major Dubai communities. Wherever you are in Dubai, we come to you.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {serviceAreas.map((area) => (
+                <motion.span
+                  key={area}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-2 px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium text-foreground shadow-sm"
+                >
+                  <MapPin size={13} className="text-rose-400" />
+                  {area}
+                </motion.span>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground text-sm mt-6">
+              Not sure if we cover your area?{" "}
+              <a href="https://wa.me/971509270282" className="text-primary hover:underline font-medium">
+                WhatsApp us
+              </a>{" "}
+              and we'll confirm instantly.
+            </p>
+          </div>
+        </section>
+
         {/* Brand Gallery Strip */}
         <section className="py-4 bg-muted/20 overflow-hidden">
           <div className="flex gap-4">
             {[...galleryImages, ...galleryImages].map((img, i) => (
               <div key={i} className="shrink-0 w-64 h-48 rounded-xl overflow-hidden">
-                <img src={img} alt="Well Done Beauty Salon" className="w-full h-full object-cover" />
+                <img src={img} alt="Well Done Beauty Salon home spa Dubai" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -285,7 +344,10 @@ export default function HomePage() {
           </div>
           <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <img src="/logo.png" alt="Well Done Beauty Salon logo" className="w-20 h-20 object-contain mx-auto mb-6 brightness-0 invert opacity-90" />
-            <h2 className="mb-6 text-4xl md:text-5xl">Ready to Relax at Home?</h2>
+            <h2 className="mb-4 text-4xl md:text-5xl">Ready to Relax at Home?</h2>
+            <p className="text-primary-foreground/70 text-base mb-2">
+              Serving JVC, Dubai Marina, Downtown Dubai, Jumeirah & all Dubai areas.
+            </p>
             <p className="text-primary-foreground/80 text-lg mb-10">
               Book your home beauty session today. Available every day, 10am to midnight.
             </p>
